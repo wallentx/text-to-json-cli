@@ -15,7 +15,7 @@ Options
      -f,  --file,  File to convert                                  
      -c,  --comments, allow comments                                
      -d,  --delimiter, delimiter for key value pairs                
-     -fg, --forgiving, doesn't throw error for duplicate keys (recommend leaving this off )     -l,  --log, whether to log when forgiving ignores an error
+     -fg, --forgiving, doesn't throw error for duplicate keys (recommend leaving this off ) 
      -l,  --log, Wether to log when forgiving ignores an error  
 
 

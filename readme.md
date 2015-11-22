@@ -20,13 +20,48 @@ Options
 
 
 Examples
+Yes, files can also contain comments. the default is the "%" sign but you can specify it to whatever you want. ↓see below.↓
+
+Unicorns.txt:
+% A comment
+foo
+bar
+baz
+
+penguin.txt
+foo:bar 
+bar:baz
+bar:baz
+baz:bar
+
+squirrel.txt
+foo=bar
+bar=baz
+baz=foo
+
+albatross.txt
+# A comment
+foo=bar
+bar=baz
+baz=foo
+
+
   $ ttj --file "unicorn.txt" --output "super-unicorn.json"
-  $ ttj --file "unicorn.txt" --output "super-unicorn.json" --forgiving
-  $ ttj --file "unicorn.txt" --delimiter "="
+     => processes unicorn.txt => ["foo", "bar", "baz"] => super-unicorn.json 
+  
+  $ ttj --file "penguin.txt" --output "super-penguin.json" --forgiving
+     => processes penguin.txt => ignores duplicates => {foo: "bar", bar: "baz", bar: "baz", baz: "bar"} => super-penguin.json
+     
+  $ ttj --file "squirrel.txt" --delimiter "="
+     => processes squirrel.txt => sets delimiter to "=" => {foo: "bar", bar: "baz", baz: "foo"} => squirrel.json
+    
+  $ ttj --file "albatross.txt" --comments "#"
+     => processes albatross.txt => sets comment identifier to "#" => {foo: "bar", bar: "baz", baz: "foo"} => albatross.json         
+  
 ```
 
 ## 🍭 API 🍭
-All but the file paramter is optional 
+If the examples above didn't get you what you needed here is some more detail.
 
 ### ttj
 ##### --file
@@ -50,6 +85,7 @@ Type: ``` boolean ```
 Adding this will allow the existence of duplicate keys and not throw an error. This is false by default.
 
 #### --log
+Type: ``` boolean ```
 
 Adding this will log when forgiving ignores an error. This is true by default.
 

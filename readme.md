@@ -25,6 +25,8 @@ Examples
 ```
 
 ## 🍭 API 🍭
+All but the file paramter is optional 
+
 ### ttj
 ##### --file
 Type: ``` string ```

@@ -42,7 +42,7 @@ if(cli.input[0] === 'help') {
 
 
 
-if(cli.flags.f) {
+if(cli.flags.f || cli.flags.file) {
   let options = {};
   options.file       = cli.flags.file      || cli.flags.f;
   options.comments   = cli.flags.comments  || cli.flags.c   || '%';

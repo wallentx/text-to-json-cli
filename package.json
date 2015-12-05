@@ -1,7 +1,7 @@
 {
   "name": "text-to-json-cli",
   "description": "A command line utility for converting a text file to json format",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/MaximilianLloyd/text-to-json-cli",
   "author": {
     "name": "Maximilian Øystå Lloyd",
